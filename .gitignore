@@ -23,6 +23,5 @@ hs_err_pid*
 /target/
 /.settings/
 
-#ignorando persistence.xml
-persistence.xml
-
+#ignora meta-inf
+*/*/src/META-INF/*
