@@ -5,7 +5,7 @@
  
     <persistence-unit name="unit_app" transaction-type="RESOURCE_LOCAL">
         <description>
-            ARQUIVO DE PERSISTÊNCIA JPA E HIBERNATE            
+            ARQUIVO DE PERSISTÊNCIA JPA E HIBERNATE  Teste          
         </description>
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
  
@@ -19,7 +19,6 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
         </properties>
- 
     </persistence-unit>
  
 </persistence>
