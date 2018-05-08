@@ -1,0 +1,4 @@
+- Programação c, java, python, c#
+- Vetorização e animação 2D
+- Modelagem 3D
+- Conceitos iniciais de unity 3D e criação de Games
