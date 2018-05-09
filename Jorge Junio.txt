@@ -1,1 +1,1 @@
-Testando integração de github com o redmine
+Matemática, Java, C, python, banco de dados MySQL, HTML
