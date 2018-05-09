@@ -1,0 +1,4 @@
+- programação python, c, java, Unity game engine c# adaptation.
+- vetorização 2D.
+- Criação de games utilizando Unity.
+  
