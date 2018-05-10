@@ -1,6 +1,7 @@
 package br.com.siga.pessoa.controller;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.List;
  
 import javax.annotation.PostConstruct;
@@ -50,5 +51,29 @@ public class ConsultarPessoaController implements Serializable {
 		this.pessoas = pessoaRepository.GetPessoas();
 	}
  
+	/***
+	 * CARREGA INFORMAÇÕES DE UMA PESSOA PARA SER EDITADA
+	 * @param pessoaModel
+	 */
+	public void Editar(PessoaModel pessoaModel){
  
+		/*PEGA APENAS A PRIMEIRA LETRA DO SEXO PARA SETAR NO CAMPO(M OU F)*/
+		pessoaModel.setSexo(pessoaModel.getSexo().substring(0, 1));
+ 
+		this.pessoaModel = pessoaModel;
+ 
+	}
+ 
+	/***
+	 * ATUALIZA O REGISTRO QUE FOI ALTERADO
+	 * @throws ParseException 
+	 */
+	public void AlterarRegistro() throws ParseException{
+ 
+		this.pessoaRepository.AlterarRegistro(this.pessoaModel);	
+ 
+ 
+		/*RECARREGA OS REGISTROS*/
+		this.init();
+	}
 }

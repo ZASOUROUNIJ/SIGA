@@ -110,5 +110,43 @@ public class PessoaRepository {
 		return pessoasModel;
  
 	}
+	
+	/***
+	 * CONSULTA UMA PESSOA CADASTRADA PELO CÓDIGO
+	 * @param codigo
+	 * @return
+	 */
+	private PessoaEntity GetPessoa(int codigo){
+ 
+		entityManager =  Uteis.JpaEntityManager();
+ 
+		return entityManager.find(PessoaEntity.class, codigo);
+	}
+ 
+	/***
+	 * ALTERA UM REGISTRO CADASTRADO NO BANCO DE DADOS
+	 * @param pessoaModel
+	 * @throws ParseException 
+	 */
+	public void AlterarRegistro(PessoaModel pessoaModel) throws ParseException{
+ 
+		entityManager =  Uteis.JpaEntityManager();
+		
+		SimpleDateFormat formato2 = new SimpleDateFormat("dd/MM/yyyy");
+		Date dataFormatada2 = formato2.parse(pessoaModel.getData());
+		
+		PessoaEntity pessoaEntity = this.GetPessoa(pessoaModel.getCodigo());
+		pessoaEntity.setNome(pessoaModel.getNome());
+		pessoaEntity.setSexo(pessoaModel.getSexo());
+		pessoaEntity.setData(dataFormatada2);
+		pessoaEntity.setIdade(pessoaModel.getIdade());
+		pessoaEntity.setEndereco(pessoaModel.getEndereco());
+		pessoaEntity.setPai(pessoaModel.getPai());
+		pessoaEntity.setMae(pessoaModel.getMae());
+		pessoaEntity.setTelefone(pessoaModel.getTelefone());
+
+ 
+		entityManager.merge(pessoaEntity);
+	}
 }
 
