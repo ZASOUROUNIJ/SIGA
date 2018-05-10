@@ -110,7 +110,6 @@ public class PessoaRepository {
 		return pessoasModel;
  
 	}
-	
 	/***
 	 * CONSULTA UMA PESSOA CADASTRADA PELO CÓDIGO
 	 * @param codigo
@@ -148,5 +147,17 @@ public class PessoaRepository {
  
 		entityManager.merge(pessoaEntity);
 	}
+	
+	/***
+	 * EXCLUI UM REGISTRO DO BANCO DE DADOS
+	 * @param codigo
+	 */
+	public void ExcluirRegistro(int codigo){
+ 
+		entityManager =  Uteis.JpaEntityManager();		
+ 
+		PessoaEntity pessoaEntity = this.GetPessoa(codigo);
+ 
+		entityManager.remove(pessoaEntity);
+	}
 }
-

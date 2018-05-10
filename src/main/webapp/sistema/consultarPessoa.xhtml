@@ -14,7 +14,7 @@
 <ui:composition template="/template/layoutBase.xhtml">
  
 	<ui:define name="content">
- 		<p:dialog header="Editar cadastro do Aluno" 
+		 <p:dialog header="Editar cadastro do Aluno" 
 				  		id="dialog-modal-editar" 
 		   		 		 widgetVar="dialog-modal-editar" 
 		   		 		 modal="true" 
@@ -94,6 +94,11 @@
         				 </p:column>
  
         				 <p:column headerText="" style="width:25px;">
+        				 <p:commandButton icon="ui-icon-trash" 
+        				    		     title="Excluir Registro"                        					 
+                        					 ajax="true"
+                        					 actionListener="#{consultarPessoaController.ExcluirPessoa(pessoa)}"
+                        					 update="@form" />
  
         				 </p:column>
  
