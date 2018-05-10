@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:format= "http://siga.com.br/LocalDateTimeConverter">
+ 
+<h:head>
+</h:head>
+ 
+<ui:composition template="/template/layoutBase.xhtml">
+ 
+	<ui:define name="content">
+ 
+		<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
+ 
+			<p:dataTable id="dataTable-registros"
+						 var="pessoa" 
+						 value="#{consultarPessoaController.pessoas}" 
+						 rows="15"
+						 paginator="true"
+						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15"
+                         style="width:98%;">
+ 
+						 <p:column headerText="Matricula" style="width:70px;">
+            				<h:outputText value="#{pessoa.codigo}" />
+        				 </p:column>
+ 
+        				 <p:column headerText="Nome" style="width:70px;">
+            				<h:outputText value="#{pessoa.nome}" />
+        				 </p:column>
+ 
+        				 <p:column headerText="Sexo" style="width:70px;">
+            				<h:outputText value="#{pessoa.sexo}" />
+        				 </p:column>
+ 
+        				 <p:column headerText="Data de Nascimento" style="width:100px;">
+            				<h:outputText value="#{pessoa.data}">            					
+ 
+            				</h:outputText>
+        				 </p:column>
+ 
+        				 <p:column headerText="Idade" style="width:70px;">
+            				<h:outputText value="#{pessoa.idade}" />
+        				 </p:column>
+        				 
+        				 <p:column headerText="Nome do Pai" style="width:70px;">
+            				<h:outputText value="#{pessoa.pai}" />
+        				 </p:column>
+        				 
+        				 <p:column headerText="Nome da Mãe" style="width:70px;">
+            				<h:outputText value="#{pessoa.mae}" />
+        				 </p:column>
+        				 
+        				 <p:column headerText="Endereço" style="width:70px;">
+            				<h:outputText value="#{pessoa.endereco}" />
+            				
+        				 </p:column>
+        				 
+        				 <p:column headerText="Data de Cadastro" style="width:150px;">
+            				<h:outputText value="#{pessoa.dataCad}" >
+            				<format:LocalDateTimeConverter pattern = "dd/MM/yyyy HH:mm:ss" />
+            				</h:outputText>
+        				 </p:column>
+
+ 
+       				 <p:column headerText="Usuário Que Cadastrou" style="width:70px;">
+            				<h:outputText value="#{pessoa.usuarioModel.usuario}" />
+        				 </p:column>
+ 
+        				 <p:column headerText="" style="width:25px;">
+ 
+        				 </p:column>
+ 
+        				 <p:column headerText="" style="width:25px;">
+ 
+        				 </p:column>
+ 
+			</p:dataTable>
+ 
+		</h:form>
+ 
+	</ui:define>
+ 
+</ui:composition>
+</html>
