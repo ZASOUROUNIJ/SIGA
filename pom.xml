@@ -8,12 +8,6 @@
   <name>Appjsf Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
  <!-- JSF -->
     <dependency>
 	<groupId>com.sun.faces</groupId>
@@ -86,8 +80,18 @@
 	<artifactId>jdom</artifactId>
 	<version>1.1</version>
     </dependency>
- 
+ <!-- Junit dependeces -->
+    <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+
   </dependencies>
+  
+  
  
   <build>
     <finalName>Appjsf</finalName>
@@ -101,6 +105,17 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      
+      <!-- Junit Plugins -->
+      
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.21.0</version>
+            
+        </plugin>
+	    
     </plugins>
+  
   </build>
 </project>
