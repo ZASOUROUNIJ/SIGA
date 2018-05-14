@@ -20,11 +20,12 @@ import java.util.Date;
 
 public class InsertAlunoTest {
     
-
+    
+   
     @Test
     public void test() {
         
-        fail("Not yet implemented");
+        fail("Not yet implemented :|" );
     }
         /*
         Date data =new Date();
