@@ -51,7 +51,7 @@ public class PessoaRepository {
  
  
 		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class, pessoaModel.getUsuarioModel().getCodigo()); 
- 
+		System.out.println(usuarioEntity.getUsuario());
 		pessoaEntity.setUsuarioEntity(usuarioEntity);
  
 		entityManager.persist(pessoaEntity);

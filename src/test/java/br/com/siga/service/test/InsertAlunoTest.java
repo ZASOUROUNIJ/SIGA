@@ -2,44 +2,51 @@ package br.com.siga.service.test;
 
 import static org.junit.Assert.*;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.junit.Test;
 
-import br.com.siga.model.PessoaModel;
-import br.com.siga.repository.entity.*;
-import br.com.siga.usuario.controller.UsuarioController;
-import br.com.siga.uteis.Uteis;
-import br.com.siga.pessoa.controller.*;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
+
+import br.com.siga.repository.entity.*;
+
+import br.com.siga.uteis.Uteis;
+
 import java.time.LocalDateTime;
 import java.util.Date;
+
+
+
+
 
 public class InsertAlunoTest {
     
     
+    @Inject
+    PessoaEntity pessoaEntity;
+    
+    EntityManager entityManager;
   
     @Test
     public void test() {
-        
-        fail("Not yet implemented :|" );
+
+        fail("Not yet implemented");
     }
+}
+        
         /*
         Date data =new Date();
         
-        EntityManager entityManager;
        
-        PessoaEntity pessoaEntity;
-        entityManager =  Uteis.JpaEntityManager();
         
+        entityManager =  Uteis.JpaEntityManager();
+        if (entityManager == null) {
+            System.out.println("NULOOOOOOOO");
+        }
 
             System.out.println("Inserindo Aluno");
+            
             
             pessoaEntity = new PessoaEntity();
             pessoaEntity.setCodigo(32);
@@ -53,11 +60,19 @@ public class InsertAlunoTest {
             pessoaEntity.setEndereco("Rua: Major Ajax");
             pessoaEntity.setDataCad(LocalDateTime.now());
             
+            //UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class, 1);
+            UsuarioEntity usuarioEntity = new UsuarioEntity();
+            usuarioEntity.setCodigo("2");
+            usuarioEntity.setSenha("123");
+            usuarioEntity.setUsuario("usu");
+            
+            pessoaEntity.setUsuarioEntity(usuarioEntity);
             entityManager.persist(pessoaEntity);
             
             System.out.println("Fim da inserção");
              
         }
-         */
+         
       
     }
+*/
