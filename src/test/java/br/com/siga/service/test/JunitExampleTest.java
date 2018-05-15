@@ -1,4 +1,4 @@
-package service;
+package br.com.siga.service.test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;

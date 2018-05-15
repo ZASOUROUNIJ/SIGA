@@ -1,9 +1,12 @@
-package service;
+package br.com.siga.service.test;
 
 import static org.junit.Assert.*;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.junit.Test;
 
@@ -21,7 +24,7 @@ import java.util.Date;
 public class InsertAlunoTest {
     
     
-   
+  
     @Test
     public void test() {
         
@@ -53,8 +56,8 @@ public class InsertAlunoTest {
             entityManager.persist(pessoaEntity);
             
             System.out.println("Fim da inserção");
-  
+             
         }
-        
-      */
+         */
+      
     }
