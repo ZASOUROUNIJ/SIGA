@@ -1,4 +1,4 @@
 - programação C
 - Design gráfico
 - HTML+CSS
-- Python
+- Python.
