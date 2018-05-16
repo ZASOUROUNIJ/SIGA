@@ -4,7 +4,6 @@ import static org.junit.Assert.fail;
 
 import java.text.ParseException;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -23,9 +22,6 @@ public class InsertAlunoTest {
 
 	@Test
 	public void test() {
-
-		Date data = new Date();
-
 		dao = new PessoaRepository();
 
 		System.out.println("Inserindo Aluno");
@@ -42,11 +38,10 @@ public class InsertAlunoTest {
 		pessoaEntity.setEndereco("Rua: Major Ajax");
 		pessoaEntity.setDataCad(LocalDateTime.now());
 
-		// UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class, 1);
 		UsuarioModel usuarioEntity = new UsuarioModel();
-		usuarioEntity.setCodigo("2");
-		usuarioEntity.setSenha("123");
-		usuarioEntity.setUsuario("usu");
+		usuarioEntity.setCodigo("1");
+		usuarioEntity.setSenha("123456");
+		usuarioEntity.setUsuario("admin");
 
 		pessoaEntity.setUsuarioModel(usuarioEntity);
 
