@@ -4,11 +4,15 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.http.HttpServletRequest;
  
 public class Uteis {
  
-	public static EntityManager JpaEntityManager(){
+	public static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("unit_app");
+	
+	public static EntityManager JpaEntityManagerOld(){
  
 		FacesContext facesContext = FacesContext.getCurrentInstance();
  
@@ -18,6 +22,13 @@ public class Uteis {
  
 		return (EntityManager)request.getAttribute("entityManager");
 	}
+	
+	public static EntityManager JpaEntityManager(){
+ 
+		return EMF.createEntityManager();
+	}
+	
+	
  
 	//MOSTRAR MENSAGEM
 	public static void Mensagem(String mensagem){
