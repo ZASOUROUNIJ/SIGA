@@ -33,6 +33,7 @@ public class PessoaRepository {
 	public void SalvarNovoRegistro(PessoaModel pessoaModel) throws ParseException{
  
 		entityManager =  Uteis.JpaEntityManager();
+		entityManager.getTransaction().begin();
 		
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataFormatada = formato.parse(pessoaModel.getData());
@@ -53,9 +54,10 @@ public class PessoaRepository {
 		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class, pessoaModel.getUsuarioModel().getCodigo()); 
 		System.out.println(usuarioEntity.getUsuario());
 		pessoaEntity.setUsuarioEntity(usuarioEntity);
- 
+		
 		entityManager.persist(pessoaEntity);
- 
+		entityManager.flush();
+		entityManager.getTransaction().commit();
 	}
 	/***
 	 * MÉTODO PARA CONSULTAR A PESSOA
