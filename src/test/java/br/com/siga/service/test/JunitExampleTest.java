@@ -12,7 +12,6 @@ public class JunitExampleTest {
     @Test
     public void justAnExample() {
         assertEquals(2,2);
-        System.out.println("teste sucesfull ! é bem docin papai!");
     }
     
 }

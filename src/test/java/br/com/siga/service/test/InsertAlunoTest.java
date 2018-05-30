@@ -1,25 +1,62 @@
 package br.com.siga.service.test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.text.ParseException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.inject.Inject;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.siga.model.PessoaModel;
-import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.PessoaRepository;
 
 public class InsertAlunoTest {
 
-	@Inject
-	PessoaModel pessoaEntity;
+	
+	//PessoaModel pessoaEntity;
 
 	PessoaRepository dao;
+	PessoaModel pessoaModel;
 
+	@Before
+	public void setUp() throws Exception {
+		dao = new PessoaRepository();
+		pessoaModel = new PessoaModel();
+		pessoaModel.setNome("Antonio Carlos Florentino De Souza Junior");
+		pessoaModel.setSexo("M");
+		pessoaModel.setData("16/05/2018");
+		pessoaModel.setIdade(22);
+		pessoaModel.setPai("Antonio Carlos Florentino De Souza");
+		pessoaModel.setMae("Maria Assunção Pereira");
+		pessoaModel.setTelefone("(84)996869885");
+		pessoaModel.setEndereco("Rua: Major Ajax");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		//dao.ExcluirRegistro(pessoaModel.getCodigo());
+		dao = null;
+	}
+	
+	@Test
+	public void testSalvarNovoRegistro() throws Exception {
+
+		dao.SalvarNovoRegistro(pessoaModel);
+		
+		List<PessoaModel> pessoas = dao.GetPessoas();
+		
+		assertTrue("T01", pessoas.contains(pessoaModel));
+		
+	}
+	/*
 	@Test
 	public void test() {
 		dao = new PessoaRepository();
@@ -44,7 +81,7 @@ public class InsertAlunoTest {
 		usuarioEntity.setUsuario("admin");
 
 		pessoaEntity.setUsuarioModel(usuarioEntity);
-
+		
 		try {
 			dao.SalvarNovoRegistro(pessoaEntity);
 		} catch (ParseException e) {
@@ -54,6 +91,32 @@ public class InsertAlunoTest {
 		}
 
 		System.out.println("Fim da inserção");
-
+		//assertEquals(2,2);
+	}*/
+	//@Test
+	public void testGetPessoas() {
+		List<PessoaModel> pessoas = dao.GetPessoas();
+		
+		assertNotNull("T01", pessoas);
+		
+		int tamanho = pessoas.size();
+		
+		//Inserir um pessoa
+		
+		pessoas = dao.GetPessoas();
+		
+		assertEquals("T02", tamanho, pessoas.size());
+	
 	}
+
+	//@Test
+	public void testAlterarRegistro() {
+		fail("Not yet implemented");
+	}
+
+	//@Test
+	public void testExcluirRegistro() {
+		fail("Not yet implemented");
+	}
+	
 }

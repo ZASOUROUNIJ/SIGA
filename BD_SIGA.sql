@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS db_estudo_java;
 CREATE DATABASE db_estudo_java;
 use db_estudo_java;
 
@@ -18,8 +19,8 @@ CREATE TABLE db_estudo_java.tb_pessoa(
     ds_email	        VARCHAR(80)  NOT NULL COMMENT 'EMAIL DA PESSOA',
     ds_endereco         VARCHAR(200) NOT NULL COMMENT 'DESCRIÇÃO DO ENDEREÇO',
     fl_origemCadastro   CHAR(1)	     NOT NULL COMMENT 'ORIGEM DO CADASTRO (I) = INPUT OU (X) = XML',	
-    id_usuario_cadastro	INT	     NOT NULL COMMENT  'USUÁRIO LOGADO QUE CADASTROU A PESSOA'
- 
+    id_usuario_cadastro	INT	     NOT NULL COMMENT  'USUÁRIO LOGADO QUE CADASTROU A PESSOA',
+	FOREIGN KEY (id_usuario_cadastro) REFERENCES db_estudo_java.tb_usuario(id_usuario)
 );
 
 CREATE TABLE db_estudo_java.tb_aluno(
@@ -34,12 +35,13 @@ CREATE TABLE db_estudo_java.tb_aluno(
     telefone			VARCHAR(20) NOT NULL COMMENT 'TELEFONE PRA CONTATO',
     endereco         VARCHAR(200) NOT NULL COMMENT 'DESCRIÇÃO DO ENDEREÇO',
     dt_cadastro         DATETIME     NOT NULL COMMENT 'DATA DE CADASTRO DO REGISTRO'
-    
 );
 
 
 
-ALTER TABLE db_estudo_java.tb_pessoa ADD FOREIGN KEY (id_usuario_cadastro) REFERENCES db_estudo_java.tb_usuario(id_usuario);
+-- ALTER TABLE db_estudo_java.tb_pessoa ADD FOREIGN KEY (id_usuario_cadastro) REFERENCES db_estudo_java.tb_usuario(id_usuario);
 
 INSERT INTO db_estudo_java.tb_usuario (ds_login,ds_senha) VALUES('admin','123456');
+
+SELECT * FROM db_estudo_java.tb_usuario;
 
