@@ -30,26 +30,16 @@ public class InsertAlunoTest {
 	@Before
 	public void setUp() throws Exception {
 		dao = new PessoaRepository();
-		/*
-		pessoaModel = new PessoaModel();
-		pessoaModel.setNome("Antonio Carlos Florentino De Souza Junior");
-		pessoaModel.setSexo("M");
-		pessoaModel.setData("16/05/2018");
-		pessoaModel.setIdade(22);
-		pessoaModel.setPai("Antonio Carlos Florentino De Souza");
-		pessoaModel.setMae("Maria Assunção Pereira");
-		pessoaModel.setTelefone("(84)996869885");
-		pessoaModel.setEndereco("Rua: Major Ajax");*/
 		
 		pessoaModel = new PessoaModel();
-		pessoaModel.setNome("Antonio Carlos Florentino De Souza Junior");
+		pessoaModel.setNome("Aluno Test");
 		pessoaModel.setSexo("M");
 		pessoaModel.setData("16/05/2018");
 		pessoaModel.setIdade(22);
-		pessoaModel.setPai("Antonio Carlos Florentino De Souza");
-		pessoaModel.setMae("Maria Assunção Pereira");
-		pessoaModel.setTelefone("(84)996869885");
-		pessoaModel.setEndereco("Rua: Major Ajax");
+		pessoaModel.setPai("Pai Aluno");
+		pessoaModel.setMae("Mãe Aluno");
+		pessoaModel.setTelefone("9 9602-9665");
+		pessoaModel.setEndereco("Rua do Aluno");
 
 		UsuarioModel usuarioEntity = new UsuarioModel();
 		usuarioEntity.setCodigo("1");
@@ -62,27 +52,31 @@ public class InsertAlunoTest {
 	@After
 	public void tearDown() throws Exception {
 		 try {
+			 //Pega a lista de alunos cadastrados no banco de dados
+			 List<PessoaModel> alunos = dao.GetPessoas();
+			 
+			 //Pega o último aluno(que foi cadastrado pelo teste) 
+			 pessoaModel = alunos.get(alunos.size() -1);
+			 
+			 //Exclui do Banco de Dados o aluno inserido pelo teste
 			 dao.ExcluirRegistro(pessoaModel.getCodigo());
 	        } catch (Exception e) {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        }
-		
-		//dao = null;
 	}
 	
 	@Test
 	public void testSalvarNovoRegistro() throws Exception {
-		List<PessoaModel> pessoas = dao.GetPessoas();
-		int valueOld = pessoas.size();
+		List<PessoaModel> alunos = dao.GetPessoas();
+		int valueOld = alunos.size();
 		
 		dao.SalvarNovoRegistro(pessoaModel);
 		
-		pessoas = dao.GetPessoas();
-		int valueNew = pessoas.size();
+		alunos = dao.GetPessoas();
+		int valueNew = alunos.size();
 		
-		//assertTrue("T01", pessoas.contains(pessoaModel));
-		assertEquals(valueOld+1, valueNew);
+		assertEquals("T01", valueOld+1, valueNew);
 		
 		
 		
