@@ -18,7 +18,7 @@ import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.entity.PessoaEntity;
 import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
-import org.junit.Test;
+//import org.junit.Test;
 
 public class PessoaRepository {
 

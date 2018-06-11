@@ -11,7 +11,7 @@ import br.com.siga.repository.PessoaRepository;
 import br.com.siga.usuario.controller.UsuarioController;
 import br.com.siga.uteis.Uteis;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 @Named(value="cadastrarPessoaController")
 @RequestScoped
