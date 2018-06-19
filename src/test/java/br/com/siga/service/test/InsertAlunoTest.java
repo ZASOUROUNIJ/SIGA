@@ -34,7 +34,7 @@ public class InsertAlunoTest {
 
 		// preenchendo o usuarioEntity
 		UsuarioModel usuarioEntity = new UsuarioModel();
-		usuarioEntity.setCodigo("1");
+		usuarioEntity.setCodigo(1);
 		usuarioEntity.setSenha("123456");
 		usuarioEntity.setUsuario("admin");
 
