@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+
+		<h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
+
+			<p:outputLabel value="ID" for="inputText-id" />
+			<p:inputText id="inputText-nome"
+				value="#{consultarTurmaController.turmaModel.id}"
+				style="width:50px" readonly="true" />
+
+			<p:outputLabel value="Nome" for="inputText-nome" />
+			<p:inputText id="inputText-nome" style="width:300px" maxlength="70"
+				value="#{consultarTurmaController.turmaModel.nome}"
+				required="true"
+				requiredMessage="O nome é de preenchimento obrigatório" />
+				
+			<p:outputLabel value="Nivel" for="inputText-ninel" />
+			<p:inputText id="inputText-nivel" style="width:300px" maxlength="70"
+				value="#{consultarTurmaController.turmaModel.nivel}"
+				required="true"
+				requiredMessage="O nivel é de preenchimento obrigatório" />
+			
+			<p:outputLabel value="Turno" for="inputText-turno" />
+			<p:inputText id="inputText-turno" style="width:300px" maxlength="70"
+				value="#{consultarTurmaController.turmaModel.turno}"
+				required="true"
+				requiredMessage="O turno é de preenchimento obrigatório" />
+
+
+			<p:outputLabel value="professor" for="inputNumber-professor" />
+			<p:inputText id="inputNumber-professor" style="width:300px"
+				maxlength="80"
+				value="#{consultarTurmaController.turmaModel.professor}"
+				required="true"
+				requiredMessage="O professor responsavel é de preenchimento obrigatório" />
+
+			<p:spacer />
+			<p:commandButton value="Excluir" id="commandButton-alterar"
+				actionListener="#{consultarTurmaController.AlterarRegistro}"
+				oncomplete="PF('dialog-modal-editar').hide();"
+				update="form-consulta" />
+			<p:spacer />
+
+			<p:spacer />
+			<p:commandButton value="Cancelar" id="commandButton-cancelar"
+				actionListener="#{consultarTurmaController.AlterarRegistro}"
+				oncomplete="PF('dialog-modal-editar').hide();"
+				update="form-consulta" />
+			<p:spacer />
+			<p:messages showDetail="false" autoUpdate="true" closable="true"
+				severity="error" />
+
+		</h:panelGrid>
+
+	</h:form>
+
+</ui:composition>
