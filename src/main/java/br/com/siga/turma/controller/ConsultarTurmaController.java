@@ -10,7 +10,6 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.siga.model.PessoaModel;
 import br.com.siga.model.TurmaModel;
 import br.com.siga.repository.TurmaRepository;
 
