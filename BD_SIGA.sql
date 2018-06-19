@@ -42,7 +42,7 @@ CREATE TABLE db_estudo_java.tb_turma(
     nivel				VARCHAR(32) NOT NULL COMMENT 'NIVEL DA TURMA',
     nome				VARCHAR(32) NOT NULL COMMENT 'NOME DA TURMA',
     turno				VARCHAR(16) NOT NULL COMMENT 'TURNO',
-    professor			INT NOT NULL COMMENT 'PROFESSOR RESPONSAVEL PELA TURMA'
+    professor			INT COMMENT 'PROFESSOR RESPONSAVEL PELA TURMA'
     -- tem que criar a tabela professor
     -- foreign key(professor) professor db_estudo_java.tb_professor(id)
 );
@@ -60,6 +60,8 @@ CREATE TABLE db_estudo_java.tb_professor(
 ALTER TABLE db_estudo_java.tb_pessoa ADD FOREIGN KEY (id_usuario_cadastro) REFERENCES db_estudo_java.tb_usuario(id_usuario);
 
 INSERT INTO db_estudo_java.tb_usuario (ds_login,ds_senha) VALUES('admin','123456');
+
+ALTER TABLE db_estudo_java.tb_turma ADD FOREIGN KEY (professor) REFERENCES db_estudo_java.tb_professor(matricula);
 
 
 

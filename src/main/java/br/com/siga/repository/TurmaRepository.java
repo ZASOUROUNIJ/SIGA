@@ -32,7 +32,6 @@ public class TurmaRepository {
 		turmaEntity.setNivel(turmaModel.getNivel());
 		turmaEntity.setNome(turmaModel.getNome());
 		turmaEntity.setTurno(turmaModel.getTurno());
-		//falta o professor
 		
 		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class,
 				turmaModel.getUsuarioModel().getCodigo());
@@ -67,7 +66,6 @@ public class TurmaRepository {
 			turmaModel.setNivel((turmaEntity.getNivel()));
 			turmaModel.setNome((turmaEntity.getNome()));
 			turmaModel.setTurno((turmaEntity.getTurno()));
-			turmaModel.setProfessor((turmaEntity.getProfessor()));
 
 			UsuarioEntity usuarioEntity = turmaEntity.getUsuarioEntity();
 
@@ -100,7 +98,6 @@ public class TurmaRepository {
 			turmaEntity.setNivel((turmaModel.getNivel()));
 			turmaEntity.setNome(turmaModel.getNome());
 			turmaEntity.setTurno(turmaModel.getTurno());
-			turmaEntity.setProfessor(turmaModel.getProfessor());
 
 			turmaEntity = entityManager.merge(turmaEntity);
 			entityManager.getTransaction().commit();

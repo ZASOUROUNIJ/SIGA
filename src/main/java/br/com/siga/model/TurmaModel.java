@@ -31,17 +31,17 @@ public class TurmaModel {
 	public void setTurno(String turno) {
 		this.turno = turno;
 	}
-	public Integer getProfessor() {
-		return professor;
-	}
-	public void setProfessor(Integer professor) {
-		this.professor = professor;
-	}
 	public UsuarioModel getUsuarioModel() {
 		return usuarioModel;
 	}
 	public void setUsuarioModel(UsuarioModel usuarioModel) {
 		this.usuarioModel = usuarioModel;
+	}
+	public Integer getProfessor() {
+		return professor;
+	}
+	public void setProfessor(Integer professor) {
+		this.professor = professor;
 	}
 	
 	

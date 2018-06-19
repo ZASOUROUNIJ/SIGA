@@ -30,27 +30,21 @@
 	            				  requiredMessage="O nome é de preenchimento obrigatório"/>
         				
         				
-        				<p:outputLabel value="Nivel" for="imputText-nivel"/>
+        				<p:outputLabel value="Nivel" for="inputText-nivel"/>
        				    <p:inputText id="inputText-nivel" 
        				    		 style="width:300px" maxlength="70" 
        				    		 value="#{cadastrarTurmaController.turmaModel.nivel}" 
 	            			     required="true"
 	            			     requiredMessage="O nivel da turma é de preenchimento obrigatório"/>
 	            			     
-	            		<p:outputLabel value="Turno" for="imputText-turno"/>
+	            		<p:outputLabel value="Turno" for="inputText-turno"/>
        				    <p:inputText id="inputText-turno" 
        				    		 style="width:300px" maxlength="70" 
        				    		 value="#{cadastrarTurmaController.turmaModel.turno}" 
 	            			     required="true"
 	            			     requiredMessage="O turno é de preenchimento obrigatório"/>	     
  
-	            		<p:outputLabel value="Professor" for="inputNumber-professor"/>
-	            		<p:inputText id="inputNumber-professor" 
-	            			     style="width:300px" 
-	            			     maxlength="80" 
-	            			     value="#{cadastrarTurmaController.turmaModel.professor}"
-	            			     required="true"
-	            			     requiredMessage="O professor responsavel pela turma é de preenchimento obrigatório"/>           	
+	            			
  
 	            		<p:commandButton value="Salvar" 
 	            				 id="commandButton-salvar"
