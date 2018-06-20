@@ -8,19 +8,25 @@
  
 		<p:menubar>
 			<p:menuitem value="Home" icon="ui-icon-home" url = "home.xhtml" />
+			<p:submenu label="Aluno">
+				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarPessoa.xhtml" />
+				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarPessoa.xhtml" />
+			</p:submenu>
 			
-			<p:menuitem value="Cadastro" icon="ui-icon-document" url ="cadastrarPessoa.xhtml" />
-			<p:menuitem value="Consulta" icon="ui-icon-document" url ="consultarPessoa.xhtml" />
+			<p:submenu label="Professor">
+				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarProfessor.xhtml" />
+				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarProfessor.xhtml" />
+			</p:submenu>
 			
-			<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarProfessor.xhtml" />
-			<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarProfessor.xhtml" />
-			
-			<p:menuitem value="Cadastro de Turma" icon="ui-icon-document" url ="cadastrarTurma.xhtml" />
- 			<p:menuitem value="Consulta de Turma" icon="ui-icon-document" url ="consultarTurma.xhtml" />
+			<p:submenu label="Turma">
+				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarTurma.xhtml" />
+ 				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarTurma.xhtml" />
+ 			</p:submenu>
  			
- 			<p:menuitem value="Cadastrar Usuário" icon="ui-icon-document" url ="cadastrarUsuario.xhtml" />
-			<p:menuitem value="Listar Usuário" icon="ui-icon-document" url ="consultarUsuario.xhtml" />
-			
+ 			<p:submenu label="Usuario">
+ 				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarUsuario.xhtml" />
+				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarUsuario.xhtml" />
+			</p:submenu>
 		<f:facet name="options">          
             	        <p:commandButton value="Logout" icon="ui-icon-extlink" action="#{usuarioController.Logout}"/>
         	</f:facet>

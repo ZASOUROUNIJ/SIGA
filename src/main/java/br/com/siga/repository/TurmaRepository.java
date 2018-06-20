@@ -32,6 +32,7 @@ public class TurmaRepository {
 		turmaEntity.setNivel(turmaModel.getNivel());
 		turmaEntity.setNome(turmaModel.getNome());
 		turmaEntity.setTurno(turmaModel.getTurno());
+		turmaEntity.setProfessor(turmaModel.getProfessor());
 		
 		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class,
 				turmaModel.getUsuarioModel().getCodigo());

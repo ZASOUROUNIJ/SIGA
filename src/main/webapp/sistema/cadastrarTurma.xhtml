@@ -42,7 +42,14 @@
        				    		 style="width:300px" maxlength="70" 
        				    		 value="#{cadastrarTurmaController.turmaModel.turno}" 
 	            			     required="true"
-	            			     requiredMessage="O turno é de preenchimento obrigatório"/>	     
+	            			     requiredMessage="O turno é de preenchimento obrigatório"/>	 
+	            			     
+	            		<p:outputLabel value="Professor" for="inputText-professor"/>
+       				    <p:inputText id="inputText-professor" 
+       				    		 style="width:300px" maxlength="70" 
+       				    		 value="#{cadastrarTurmaController.turmaModel.professor}" 
+	            			     required="true"
+	            			     requiredMessage="O professor é de preenchimento obrigatório"/>	    
  
 	            			
  
