@@ -22,9 +22,19 @@
 		   		 		 width="600px">
  
     		 <ui:include src="/sistema/editarPessoa.xhtml"/>
- 
- 
 		</p:dialog>
+		
+		<p:dialog header="Alocar aluno em Turma" 
+                        id="dialog-modal-alocar" 
+                         widgetVar="dialog-modal-alocar" 
+                         modal="true" 
+                         height="450px"
+                         width="600px">
+ 
+             <ui:include src="/sistema/alocarPessoa.xhtml"/>
+        </p:dialog>
+        
+       
 		<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
  
 			<p:dataTable id="dataTable-registros"
@@ -88,15 +98,26 @@
         				 </p:column>
  
         				 <p:column headerText="" style="width:25px;">
-        				 <p:commandButton icon="ui-icon-pencil" 
-        				    				    title="Editar Aluno"                        					 
+        				 <p:commandButton icon="" 
+        				    				    title="Alocar Aluno em Turma"                        					 
                         					    ajax="true"                        					 
                         					    actionListener="#{consultarPessoaController.Editar(pessoa)}"
-                        					    oncomplete="PF('dialog-modal-editar').show();" 
-                        					    update="dialog-modal-editar"/>
+                        					    oncomplete="PF('dialog-modal-alocar').show();" 
+                        					    update="dialog-modal-alocar"/>
  
  
         				 </p:column>
+        				 
+        				 <p:column headerText="" style="width:25px;">
+                         <p:commandButton icon="ui-icon-pencil" 
+                                                title="Editar Aluno"                                             
+                                                ajax="true"                                          
+                                                actionListener="#{consultarPessoaController.Editar(pessoa)}"
+                                                oncomplete="PF('dialog-modal-editar').show();" 
+                                                update="dialog-modal-alocar"/>
+ 
+ 
+                         </p:column>
  
         				 <p:column headerText="" style="width:25px;">
         				 <p:commandButton icon="ui-icon-trash" 

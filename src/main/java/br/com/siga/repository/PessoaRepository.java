@@ -16,6 +16,7 @@ import javax.persistence.Query;
 import br.com.siga.model.PessoaModel;
 import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.entity.PessoaEntity;
+import br.com.siga.repository.entity.TurmaAlunoEntity;
 import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
 //import org.junit.Test;
@@ -24,6 +25,9 @@ public class PessoaRepository {
 
 	@Inject
 	PessoaEntity pessoaEntity;
+	
+	@Inject
+    TurmaAlunoEntity turmaAlunoEntity;
 
 	EntityManager entityManager;
 
@@ -201,4 +205,21 @@ public class PessoaRepository {
 			}
 		}
 	}
+	
+	public void AlocarAluno(int matricula, int id_turma, int ano) throws ParseException {
+
+        entityManager = Uteis.JpaEntityManager();
+        entityManager.getTransaction().begin();
+
+
+        turmaAlunoEntity = new TurmaAlunoEntity();
+        turmaAlunoEntity.setMatricula(matricula);
+        turmaAlunoEntity.setId_turma(id_turma);
+        turmaAlunoEntity.setAno(ano);
+        
+        entityManager.persist(turmaAlunoEntity);
+        entityManager.flush();
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
 }

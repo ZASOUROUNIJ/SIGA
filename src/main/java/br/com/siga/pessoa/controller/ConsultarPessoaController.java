@@ -22,25 +22,41 @@ public class ConsultarPessoaController implements Serializable {
  
 	@Inject transient
 	private PessoaModel pessoaModel;
- 
-	@Produces 
+
+    @Produces 
 	private List<PessoaModel> pessoas;
  
 	@Inject transient
 	private PessoaRepository pessoaRepository;
- 
-	public List<PessoaModel> getPessoas() {
+	
+	private int id_turma;
+    private int ano;
+	
+	public int getId_turma() {
+        return id_turma;
+    }
+    public void setId_turma(int id_turma) {
+        this.id_turma = id_turma;
+    }
+    public int getAno() {
+        return ano;
+    }
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+    public List<PessoaModel> getPessoas() {
 		return pessoas;
 	}
 	public void setPessoas(List<PessoaModel> pessoas) {
 		this.pessoas = pessoas;
-	}		
+	}	
 	public PessoaModel getPessoaModel() {
 		return pessoaModel;
 	}
 	public void setPessoaModel(PessoaModel pessoaModel) {
 		this.pessoaModel = pessoaModel;
 	}
+	
  
 	/***
 	 * CARREGA AS PESSOAS NA INICIALIZAÇÃO 
@@ -92,5 +108,14 @@ public class ConsultarPessoaController implements Serializable {
 		this.pessoas.remove(pessoaModel);
  
 	}
+	
+	/***
+     * ATUALIZA O REGISTRO QUE FOI ALTERADO
+     * @throws ParseException 
+     */
+    public void AlocarAluno() throws ParseException{
  
+        this.pessoaRepository.AlocarAluno(this.pessoaModel.getCodigo(), id_turma, ano); 
+ 
+    }
 }

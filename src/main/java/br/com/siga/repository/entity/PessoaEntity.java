@@ -56,7 +56,7 @@ public class PessoaEntity {
 	@Column(name = "dt_cadastro")
 	private LocalDateTime	dataCad;
  
-	@OneToOne
+    @OneToOne
 	@JoinColumn(name="id_usuario_cadastro")
 	private UsuarioEntity usuarioEntity;
  

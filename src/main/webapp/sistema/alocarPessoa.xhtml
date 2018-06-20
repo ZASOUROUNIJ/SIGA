@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+ 
+    <h:form>
+ 
+       <h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
+       
+       					<p:outputLabel value="Código" for="inputText-nome"/>
+							 <p:inputText   id="inputText-codigo"
+	 							value="#{consultarPessoaController.pessoaModel.codigo}"
+	 							style="width:50px"
+	 							readonly="true"/>
+ 
+						<p:outputLabel value="Nome" for="inputText-nome"/>
+	            		<p:inputText id="inputText-nome" 
+	            				  style="width:300px" maxlength="70" 
+	            				  value="#{consultarPessoaController.pessoaModel.nome}"
+	            				  readonly="true"/>
+	            			     
+ 
+	            		<p:outputLabel value="Idade" for="inputNumber-idade"/>
+	            		<p:inputText id="inputNumber-idade" 
+	            			     style="width:300px" 
+	            			     maxlength="80" 
+	            			     value="#{consultarPessoaController.pessoaModel.idade}"
+	            			     readonly="true"/>  
+	            	  
+	            	    <p:outputLabel value="Id Turma" for="inputNumber-id_turma"/>
+                        <p:inputText id="inputNumber-id_turma" 
+                                 style="width:300px" 
+                                 maxlength="80" 
+                                 value="#{consultarPessoaController.id_turma}"
+                                 required="true"
+                                 requiredMessage="O Id Turma é de preenchimento obrigatório"/> 
+                                 
+                        <p:outputLabel value="Ano" for="inputNumber-ano"/>
+                        <p:inputText id="inputNumber-ano" 
+                                 style="width:300px" 
+                                 maxlength="80" 
+                                 value="#{consultarPessoaController.ano}"
+                                 required="true"
+                                 requiredMessage="O Ano é de preenchimento obrigatório"/> 
+	            		       		
+	            		         
+ 
+ 		<p:spacer/>
+	<p:commandButton value="Alocar" 
+	            	 id="commandButton-alocar"
+			 icon="ui-icon-gear"
+	   actionListener="#{consultarPessoaController.AlocarAluno}"							 
+			 oncomplete="PF('dialog-modal-alocar').hide();"
+		         update="form-consulta"/> 
+        <p:spacer/>
+	<p:messages showDetail="false" autoUpdate="true" closable="true" severity="error"/>
+ 
+     </h:panelGrid>                  
+ 
+    </h:form>
+ 
+</ui:composition>
