@@ -12,3 +12,5 @@
 /.travis.yml.swp
 /createDDL_ddlGeneration.jdbc
 /dropDDL_ddlGeneration.jdbc
+
+!.mvn/wrapper/maven-wrapper.jar
