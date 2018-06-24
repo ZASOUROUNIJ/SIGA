@@ -40,11 +40,6 @@ public class CadastrarPessoaController {
 	 * @throws ParseException 
 	 */
 	public void SalvarNovaPessoa() throws ParseException{
- 
-		pessoaModel.setUsuarioModel(this.usuarioController.GetUsuarioSession());
- 
-		//INFORMANDO QUE O CADASTRO FOI VIA INPUT
- 
 		pessoaRepository.SalvarNovoRegistro(this.pessoaModel);
  
 		this.pessoaModel = null;

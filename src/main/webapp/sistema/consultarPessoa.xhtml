@@ -91,21 +91,14 @@
             				<format:LocalDateTimeConverter pattern = "dd/MM/yyyy HH:mm:ss" />
             				</h:outputText>
         				 </p:column>
-
- 
-       				 <p:column headerText="Usuário Que Cadastrou" style="width:70px;">
-            				<h:outputText value="#{pessoa.usuarioModel.usuario}" />
-        				 </p:column>
  
         				 <p:column headerText="" style="width:25px;">
-        				 <p:commandButton icon="" 
+        				 <p:commandButton icon="ui-icon-link" 
         				    				    title="Alocar Aluno em Turma"                        					 
                         					    ajax="true"                        					 
                         					    actionListener="#{consultarPessoaController.Editar(pessoa)}"
                         					    oncomplete="PF('dialog-modal-alocar').show();" 
                         					    update="dialog-modal-alocar"/>
- 
- 
         				 </p:column>
         				 
         				 <p:column headerText="" style="width:25px;">

@@ -20,7 +20,7 @@ import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.PessoaRepository;
 import br.com.siga.repository.entity.PessoaEntity;
 
-public class InsertAlunoTest {
+public class AlunoTest {
 
 	// PessoaModel pessoaEntity;
 
@@ -32,12 +32,6 @@ public class InsertAlunoTest {
 	public void setUp() throws Exception {
 		dao = new PessoaRepository();
 
-		// preenchendo o usuarioEntity
-		UsuarioModel usuarioEntity = new UsuarioModel();
-		usuarioEntity.setCodigo(1);
-		usuarioEntity.setSenha("123456");
-		usuarioEntity.setUsuario("admin");
-
 		// preenchendo o Aluno1
 		aluno1 = new PessoaModel();
 		aluno1.setNome("Aluno Test Um");
@@ -48,7 +42,6 @@ public class InsertAlunoTest {
 		aluno1.setMae("Mãe Aluno Um");
 		aluno1.setTelefone("9 9602-9665");
 		aluno1.setEndereco("Rua do Aluno Um");
-		aluno1.setUsuarioModel(usuarioEntity);
 
 		// preenchendo o Aluno2
 		aluno2 = new PessoaModel();
@@ -60,7 +53,6 @@ public class InsertAlunoTest {
 		aluno2.setMae("Mãe Aluno Dois");
 		aluno2.setTelefone("9 9602-9665");
 		aluno2.setEndereco("Rua do Aluno Dois");
-		aluno2.setUsuarioModel(usuarioEntity);
 	}
 
 	@After

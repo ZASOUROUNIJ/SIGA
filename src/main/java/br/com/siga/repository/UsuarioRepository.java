@@ -2,11 +2,8 @@ package br.com.siga.repository;
 
 import java.io.Serializable;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,14 +11,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
-import br.com.siga.model.ProfessorModel;
 import br.com.siga.model.UsuarioModel;
-import br.com.siga.repository.entity.PessoaEntity;
-import br.com.siga.repository.entity.ProfessorEntity;
 import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
- 
-import org.junit.Test;
  
 public class UsuarioRepository implements Serializable {
 	

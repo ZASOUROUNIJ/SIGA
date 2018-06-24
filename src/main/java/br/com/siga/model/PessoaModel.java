@@ -17,7 +17,6 @@ public class PessoaModel {
 	private String  		telefone;
 	private String  		endereco;
 	private LocalDateTime	dataCad;
-    private UsuarioModel    usuarioModel;
 	
 
 	
@@ -82,13 +81,4 @@ public class PessoaModel {
 	public void setDataCad(LocalDateTime dataCad) {
 		this.dataCad = dataCad;
 	}
-	public UsuarioModel getUsuarioModel() {
-		return usuarioModel;
-	}
-	public void setUsuarioModel(UsuarioModel usuarioModel) {
-		this.usuarioModel = usuarioModel;
-	}
- 
-
- 
 }

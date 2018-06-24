@@ -14,10 +14,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
 import br.com.siga.model.PessoaModel;
-import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.entity.PessoaEntity;
 import br.com.siga.repository.entity.TurmaAlunoEntity;
-import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
 //import org.junit.Test;
 
@@ -56,10 +54,6 @@ public class PessoaRepository {
 		pessoaEntity.setTelefone(pessoaModel.getTelefone());
 		pessoaEntity.setEndereco(pessoaModel.getEndereco());
 		pessoaEntity.setDataCad(LocalDateTime.now());
-
-		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class,
-				pessoaModel.getUsuarioModel().getCodigo());
-		pessoaEntity.setUsuarioEntity(usuarioEntity);
 
 		entityManager.persist(pessoaEntity);
 		entityManager.flush();
@@ -109,13 +103,6 @@ public class PessoaRepository {
 				pessoaModel.setSexo("Masculino");
 			else
 				pessoaModel.setSexo("Feminino");
-
-			UsuarioEntity usuarioEntity = pessoaEntity.getUsuarioEntity();
-
-			UsuarioModel usuarioModel = new UsuarioModel();
-			usuarioModel.setUsuario(usuarioEntity.getUsuario());
-
-			pessoaModel.setUsuarioModel(usuarioModel);
 
 			pessoasModel.add(pessoaModel);
 		}
