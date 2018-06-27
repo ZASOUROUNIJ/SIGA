@@ -6,13 +6,11 @@ import static org.junit.Assert.fail;
 
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import br.com.siga.model.PessoaModel;
 import br.com.siga.repository.PessoaRepository;
-import br.com.siga.repository.entity.PessoaEntity;
 
 public class AlunoTest {
 
@@ -21,6 +19,7 @@ public class AlunoTest {
 	PessoaRepository dao;
 	PessoaModel aluno1;
 	PessoaModel aluno2;
+	PessoaModel alunoAux;
 
 	@Before
 	public void setUp() throws Exception {
@@ -47,19 +46,16 @@ public class AlunoTest {
 		aluno2.setMae("Mãe Aluno Dois");
 		aluno2.setTelefone("9 9602-9665");
 		aluno2.setEndereco("Rua do Aluno Dois");
+
+		// preenchendo o AlunoAux
+		alunoAux = new PessoaModel();
+
 	}
 
-	@After
+	// @After
 	public void tearDown() throws Exception {
 		try {
-			// Pega a lista de alunos cadastrados no banco de dados
-			List<PessoaModel> alunos = dao.GetPessoas();
 
-			// Pega o último aluno(que foi cadastrado pelo teste)
-			aluno1 = alunos.get(alunos.size() - 1);
-			
-			// Exclui do Banco de Dados o aluno inserido pelo teste
-			dao.ExcluirRegistro(aluno1.getCodigo());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,39 +64,65 @@ public class AlunoTest {
 
 	@Test
 	public void testSalvarNovoRegistro() throws Exception {
-		List<PessoaModel> alunos = dao.GetPessoas();
-		int valueOld = alunos.size();
+		try {
+			List<PessoaModel> alunos = dao.GetPessoas();
+			int valueOld = alunos.size();
 
-		dao.SalvarNovoRegistro(aluno1);
+			dao.SalvarNovoRegistro(aluno1);
 
-		alunos = dao.GetPessoas();
-		int valueNew = alunos.size();
+			alunos = dao.GetPessoas();
+			int valueNew = alunos.size();
 
-		assertEquals("TestInsertAluno", valueOld + 1, valueNew);
-
+			assertNotNull("1", aluno1);
+			assertEquals("2", valueOld + 1, valueNew);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	//@Test
-	public void testBuscar() {
+	@Test
+	public void testBuscar() throws Exception {
 		try {
-			dao.SalvarNovoRegistro(aluno2);
-			
 			// Pega a lista de alunos cadastrados no banco de dados
 			List<PessoaModel> alunos = dao.GetPessoas();
 
 			// Pega o último aluno(que foi cadastrado pelo teste)
-			aluno2 = alunos.get(alunos.size() - 1);
+			alunoAux = alunos.get(alunos.size()-1);
+
+			String nome = alunoAux.getNome();
+
 			
-			PessoaEntity alunoBuscado = new PessoaEntity();
-			alunoBuscado = dao.findPessoa(aluno2.getCodigo());
-
-			assertNotNull("1", aluno2);
-			assertNotNull("2", aluno2.getCodigo());
-			assertEquals("3", "Aluno Test Dois", aluno2.getNome());
-
-			assertEquals("4", alunoBuscado.getCodigo(), aluno2.getCodigo());
+			assertEquals("1", "Aluno Test Um", nome);
 		} catch (Exception e) {
 			fail();
+		}
+	}
+
+	@Test
+	public void testExcluirRegistro() throws Exception {
+		try {
+			
+
+			//dao.SalvarNovoRegistro(aluno2);
+			
+			// Pega a lista de alunos cadastrados no banco de dados
+			List<PessoaModel> alunos = dao.GetPessoas();
+			int valueOld = alunos.size();
+			
+			// Pega o último aluno(que foi cadastrado pelo teste)
+			alunoAux = alunos.get(alunos.size());
+			
+			// Exclui do Banco de Dados o aluno inserido pelo teste
+			dao.ExcluirRegistro(alunoAux.getCodigo());
+			
+			alunos = dao.GetPessoas();
+			int valueNew = alunos.size();
+
+			assertEquals("1", valueOld -1 , valueNew);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -122,11 +144,6 @@ public class AlunoTest {
 
 	// @Test
 	public void testAlterarRegistro() {
-		fail("Not yet implemented");
-	}
-
-	// @Test
-	public void testExcluirRegistro() {
 		fail("Not yet implemented");
 	}
 
