@@ -5,10 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,10 +35,6 @@ public class TurmaEntity {
 	
 	@Column(name = "professor")
 	private Integer professor; 
-	
-	@OneToOne
-	@JoinColumn(name="id_usuario_cadastro")
-	private UsuarioEntity usuarioEntity;
 
 	public Integer getId() {
 		return Id;
@@ -82,13 +76,6 @@ public class TurmaEntity {
 		this.professor = professor;
 	}
 
-	public UsuarioEntity getUsuarioEntity() {
-		return usuarioEntity;
-	}
-
-	public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
-		this.usuarioEntity = usuarioEntity;
-	}
 	
 	
 	

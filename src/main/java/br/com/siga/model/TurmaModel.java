@@ -6,7 +6,8 @@ public class TurmaModel {
 	private String nome;
 	private String turno;
 	private Integer professor;
-	private UsuarioModel usuarioModel;
+	
+	
 	public Integer getId() {
 		return Id;
 	}
@@ -31,12 +32,7 @@ public class TurmaModel {
 	public void setTurno(String turno) {
 		this.turno = turno;
 	}
-	public UsuarioModel getUsuarioModel() {
-		return usuarioModel;
-	}
-	public void setUsuarioModel(UsuarioModel usuarioModel) {
-		this.usuarioModel = usuarioModel;
-	}
+	
 	public Integer getProfessor() {
 		return professor;
 	}

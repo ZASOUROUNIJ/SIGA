@@ -6,9 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.siga.model.ProfessorModel;
 import br.com.siga.model.UsuarioModel;
-import br.com.siga.repository.ProfessorRepository;
 import br.com.siga.repository.UsuarioRepository;
 import br.com.siga.uteis.Uteis;
 

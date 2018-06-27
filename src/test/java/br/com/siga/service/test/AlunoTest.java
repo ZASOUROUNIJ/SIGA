@@ -2,21 +2,15 @@ package br.com.siga.service.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.text.ParseException;
-import java.time.LocalDateTime;
 import java.util.List;
-
-import javax.inject.Inject;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import br.com.siga.model.PessoaModel;
-import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.PessoaRepository;
 import br.com.siga.repository.entity.PessoaEntity;
 

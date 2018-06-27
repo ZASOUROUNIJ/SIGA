@@ -14,9 +14,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
 import br.com.siga.model.ProfessorModel;
-import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.entity.ProfessorEntity;
-import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
 //import org.junit.Test;
 
@@ -48,10 +46,6 @@ public class ProfessorRepository {
 			professorEntity.setTelefone(professorModel.getTelefone());
 			professorEntity.setEndereco(professorModel.getEndereco());
 			professorEntity.setDataCad(LocalDateTime.now());
-
-			UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class,
-					professorModel.getUsuarioModel().getCodigo());
-			professorEntity.setUsuarioEntity(usuarioEntity);
 
 			entityManager.persist(professorEntity);
 			entityManager.flush();
@@ -93,13 +87,6 @@ public class ProfessorRepository {
 				professorModel.setTelefone(professorEntity.getTelefone());
 				professorModel.setEndereco(professorEntity.getEndereco());
 				professorModel.setDataCad(professorEntity.getDataCad());
-
-				UsuarioEntity usuarioEntity = professorEntity.getUsuarioEntity();
-
-				UsuarioModel usuarioModel = new UsuarioModel();
-				usuarioModel.setUsuario(usuarioEntity.getUsuario());
-
-				professorModel.setUsuarioModel(usuarioModel);
 
 				professoresModel.add(professorModel);
 			}

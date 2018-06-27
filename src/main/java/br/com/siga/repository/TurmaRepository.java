@@ -11,9 +11,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
 import br.com.siga.model.TurmaModel;
-import br.com.siga.model.UsuarioModel;
 import br.com.siga.repository.entity.TurmaEntity;
-import br.com.siga.repository.entity.UsuarioEntity;
 import br.com.siga.uteis.Uteis;
 
 public class TurmaRepository {
@@ -34,9 +32,7 @@ public class TurmaRepository {
 		turmaEntity.setTurno(turmaModel.getTurno());
 		turmaEntity.setProfessor(turmaModel.getProfessor());
 		
-		UsuarioEntity usuarioEntity = entityManager.find(UsuarioEntity.class,
-				turmaModel.getUsuarioModel().getCodigo());
-		turmaEntity.setUsuarioEntity(usuarioEntity);
+		
 		entityManager.persist(turmaEntity);
 		entityManager.flush();
 		entityManager.getTransaction().commit();
@@ -69,12 +65,6 @@ public class TurmaRepository {
 			turmaModel.setTurno((turmaEntity.getTurno()));
 			turmaModel.setProfessor((turmaEntity.getProfessor()));
 
-			UsuarioEntity usuarioEntity = turmaEntity.getUsuarioEntity();
-
-			UsuarioModel usuarioModel = new UsuarioModel();
-			usuarioModel.setUsuario(usuarioEntity.getUsuario());
-
-			turmaModel.setUsuarioModel(usuarioModel);
 
 			turmasModel.add(turmaModel);
 		}

@@ -8,10 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
  
  
@@ -44,10 +42,6 @@ public class ProfessorEntity {
 	
 	@Column(name = "dt_cadastro")
 	private LocalDateTime	dataCad;
- 
-	@OneToOne
-	@JoinColumn(name="id_usuario_cadastro")
-	private UsuarioEntity usuarioEntity;
  
 
 	public Integer getCodigo() {
@@ -85,12 +79,6 @@ public class ProfessorEntity {
 	}
 	public void setDataCad(LocalDateTime dataCad) {
 		this.dataCad = dataCad;
-	}
-	public UsuarioEntity getUsuarioEntity() {
-		return usuarioEntity;
-	}
-	public void setUsuarioEntity(UsuarioEntity usuarioEntity) {
-		this.usuarioEntity = usuarioEntity;
 	}
  
 }

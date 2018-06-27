@@ -8,7 +8,6 @@ import javax.inject.Named;
 
 import br.com.siga.model.ProfessorModel;
 import br.com.siga.repository.ProfessorRepository;
-import br.com.siga.usuario.controller.UsuarioController;
 import br.com.siga.uteis.Uteis;
 
 //import org.junit.Test;
@@ -19,9 +18,6 @@ public class CadastrarProfessorController {
 
 	@Inject
 	ProfessorModel professorModel;
- 
-	@Inject
-	UsuarioController usuarioController;
  
 	@Inject
 	ProfessorRepository professorRepository;
@@ -40,8 +36,6 @@ public class CadastrarProfessorController {
 	 * @throws ParseException 
 	 */
 	public void SalvarNovoProfessor() throws ParseException{
- 
-		professorModel.setUsuarioModel(this.usuarioController.GetUsuarioSession());
  
 		//INFORMANDO QUE O CADASTRO FOI VIA INPUT
  
