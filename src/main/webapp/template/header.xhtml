@@ -7,28 +7,29 @@
 	<h:form>
  
 		<p:menubar>
-			<p:menuitem value="Home" icon="ui-icon-home" url = "home.xhtml" />
-			<p:submenu label="Aluno">
-				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarPessoa.xhtml" />
-				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarPessoa.xhtml" />
+			<p:menuitem value="Home" icon="ui-icon-home" url = "home.xhtml" style="font-variant: small-caps;" />
+			<p:submenu label="Aluno" class="top" style="font-size: 12px;">
+				<p:menuitem value="Cadastrar" icon="ui-icon-plus" url ="cadastrarPessoa.xhtml" style="font-variant: small-caps;" />
+				<p:menuitem value="Consultar" icon="ui-icon-contact" url ="consultarPessoa.xhtml" style="font-variant: small-caps;" />
 			</p:submenu>
 			
-			<p:submenu label="Professor">
-				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarProfessor.xhtml" />
-				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarProfessor.xhtml" />
+			<p:submenu label="Professor" class="top">
+				<p:menuitem value="Cadastrar" icon="ui-icon-plus" url ="cadastrarProfessor.xhtml" style="font-variant: small-caps;" />
+				<p:menuitem value="Consultar" icon="ui-icon-contact" url ="consultarProfessor.xhtml" style="font-variant: small-caps;" />
 			</p:submenu>
 			
-			<p:submenu label="Turma">
-				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarTurma.xhtml" />
- 				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarTurma.xhtml" />
+			<p:submenu label="Turma" class="top">
+				<p:menuitem value="Cadastrar" icon="ui-icon-plus" url ="cadastrarTurma.xhtml" style="font-variant: small-caps;" />
+ 				<p:menuitem value="Consultar" icon="ui-icon-contact" url ="consultarTurma.xhtml" style="font-variant: small-caps;" />
  			</p:submenu>
  			
- 			<p:submenu label="Usuario">
- 				<p:menuitem value="Cadastrar" icon="ui-icon-document" url ="cadastrarUsuario.xhtml" />
-				<p:menuitem value="Consultar" icon="ui-icon-document" url ="consultarUsuario.xhtml" />
+ 			<p:submenu label="Usuario" class="top">
+ 				<p:menuitem value="Cadastrar" icon="ui-icon-plus" url ="cadastrarUsuario.xhtml" style="font-variant: small-caps;" />
+				<p:menuitem value="Consultar" icon="ui-icon-contact" url ="consultarUsuario.xhtml" style="font-variant: small-caps;" />
 			</p:submenu>
-		<f:facet name="options">          
-            	        <p:commandButton value="Logout" icon="ui-icon-extlink" action="#{usuarioController.Logout}"/>
+		<f:facet name="options" >          
+            	        <p:commandButton value="Logout" class="top" icon="ui-icon-extlink"
+            	        action="#{usuarioController.Logout}" style="padding:3px;" />
         	</f:facet>
 		</p:menubar>
  

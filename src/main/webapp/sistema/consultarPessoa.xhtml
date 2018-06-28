@@ -43,50 +43,50 @@
 						 rows="15"
 						 paginator="true"
 						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="5,10,15"
+                         
                          style="width:98%;">
  
-						 <p:column headerText="Matricula" style="width:70px;">
+						 <p:column headerText="Matricula" style="width:70px;" sortBy="#{pessoa.codigo}">
             				<h:outputText value="#{pessoa.codigo}" />
         				 </p:column>
  
-        				 <p:column headerText="Nome" style="width:70px;">
+        				 <p:column headerText="Nome" style="width:70px;" sortBy="#{pessoa.nome}">
             				<h:outputText value="#{pessoa.nome}" />
         				 </p:column>
  
-        				 <p:column headerText="Sexo" style="width:70px;">
+        				 <p:column headerText="Sexo" style="width:70px;" sortBy="#{pessoa.sexo}">
             				<h:outputText value="#{pessoa.sexo}" />
         				 </p:column>
  
-        				 <p:column headerText="Data de Nascimento" style="width:100px;">
+        				 <p:column headerText="Data de Nascimento" style="width:100px;" sortBy="#{pessoa.data}">
             				<h:outputText value="#{pessoa.data}">            					
  
             				</h:outputText>
         				 </p:column>
  
-        				 <p:column headerText="Idade" style="width:70px;">
+        				 <p:column headerText="Idade" style="width:70px;" sortBy="#{pessoa.idade}">
             				<h:outputText value="#{pessoa.idade}" />
         				 </p:column>
         				 
-        				 <p:column headerText="Nome do Pai" style="width:70px;">
+        				 <p:column headerText="Nome do Pai" style="width:70px;" sortBy="#{pessoa.pai}">
             				<h:outputText value="#{pessoa.pai}" />
         				 </p:column>
         				 
-        				 <p:column headerText="Nome da Mãe" style="width:70px;">
+        				 <p:column headerText="Nome da Mãe" style="width:70px;" sortBy="#{pessoa.mae}">
             				<h:outputText value="#{pessoa.mae}" />
         				 </p:column>
         				 
-        				 <p:column headerText="Telefone" style="width:70px;">
+        				 <p:column headerText="Telefone" style="width:70px;" sortBy="#{pessoa.telefone}">
             				<h:outputText value="#{pessoa.telefone}" />
             				
         				 </p:column>
         				 
-        				 <p:column headerText="Endereço" style="width:70px;">
+        				 <p:column headerText="Endereço" style="width:70px;" sortBy="#{pessoa.endereco}">
             				<h:outputText value="#{pessoa.endereco}" />
             				
         				 </p:column>
         				 
-        				 <p:column headerText="Data de Cadastro" style="width:150px;">
+        				 <p:column headerText="Data de Cadastro" style="width:150px;" sortBy="#{pessoa.dataCad}">
             				<h:outputText value="#{pessoa.dataCad}" >
             				<format:LocalDateTimeConverter pattern = "dd/MM/yyyy HH:mm:ss" />
             				</h:outputText>
@@ -107,7 +107,7 @@
                                                 ajax="true"                                          
                                                 actionListener="#{consultarPessoaController.Editar(pessoa)}"
                                                 oncomplete="PF('dialog-modal-editar').show();" 
-                                                update="dialog-modal-alocar"/>
+                                                update="dialog-modal-editar"/>
  
  
                          </p:column>

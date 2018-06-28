@@ -23,27 +23,29 @@
 		    <p:panel id="panel-login-principal" 
 		    		 header="Login" 
 		    		 footer="SIGA" 
-		    		 style="width:400px;">
+		    		 style="width:470px;background:#008B8B;margin-bottom:20px;padding:0px;">
  
 	        	<h:panelGrid columns="2" cellpadding="10">
  
-	            	<p:graphicImage url="/resources/imagens/loked.png" />
+	            	<p:graphicImage url="/resources/imagens/logo.png" style="width:150px;height:90px;"/>
  
 	            	<h:panelGrid columns="2" cellpadding="5">
-	            		<p:outputLabel value="Login"/>
+	            		<p:outputLabel value="Login" class="asa"/>
 	            		<p:inputText id="inputText-login" 
-	            			     value="#{usuarioController.usuarioModel.usuario}"/>
+	            			     value="#{usuarioController.usuarioModel.usuario}"
+	            			     style="width: 200px; height: 20px;font-family: Helvetica;" />
  
-	            		<p:outputLabel value="Senha"/>
+	            		<p:outputLabel value="Senha" class="asa"/>
 	            		<p:password id="password-usuario" 
-	            			    value="#{usuarioController.usuarioModel.senha}"/>
+	            			    value="#{usuarioController.usuarioModel.senha}"
+	            			    style="width: 200px; height: 20px;font-family: Arial;" />
  
 	            		&nbsp;
 	            		<p:commandButton value="Acessar" 
-	            				 id="commandButton-acessar"
-						 icon="ui-icon-gear"
-						 action="#{usuarioController.EfetuarLogin}"
-						 update="growl-mensagem" />
+	            			id="commandButton-acessar"
+						 	action="#{usuarioController.EfetuarLogin}"
+						 	update="growl-mensagem" 
+						 	styleClass="ui-priority-primary" class="btn" />
  
 	            	</h:panelGrid>
  

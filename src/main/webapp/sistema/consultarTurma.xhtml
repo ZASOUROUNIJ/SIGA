@@ -33,31 +33,31 @@
 						 rows="15"
 						 paginator="true"
 						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="5,10,15"
+                         
                          style="width:98%;">
  
-						 <p:column headerText="ID" style="width:70px;">
+						 <p:column headerText="ID" style="width:70px;" sortBy="#{turma.id}">
             				<h:outputText value="#{turma.id}" />
         				 </p:column>
  
-        				 <p:column headerText="Nome" style="width:70px;">
+        				 <p:column headerText="Nome" style="width:70px;" sortBy="#{turma.nome}">
             				<h:outputText value="#{turma.nome}" />
         				 </p:column>
  
-        				 <p:column headerText="Nivel" style="width:70px;">
+        				 <p:column headerText="Nivel" style="width:70px;" sortBy="#{turma.nivel}">
             				<h:outputText value="#{turma.nivel}" />
         				 </p:column>
  
-        				 <p:column headerText="Turno" style="width:100px;">
+        				 <p:column headerText="Turno" style="width:100px;" sortBy="#{turma.turno}">
             				<h:outputText value="#{turma.turno}">            					
  
             				</h:outputText>
         				 </p:column>
  
-        				 <p:column headerText="Professor" style="width:70px;">
+        				 <p:column headerText="Professor" style="width:70px;" sortBy="#{turma.professor}">
             				<h:outputText value="#{turma.professor}" />
         				 </p:column>
-        				 
+
         				 <p:column headerText="" style="width:25px;">
         				 <p:commandButton icon="ui-icon-pencil" 
         				    				    title="Editar Turma"                        					 

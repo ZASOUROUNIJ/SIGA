@@ -30,21 +30,21 @@
 			<p:dataTable id="dataTable-registros"
 						 var="user" 
 						 value="#{consultarUsuarioController.usuarios}" 
-						 rows="15"
+						 rows="10"
 						 paginator="true"
 						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="5,10,15"
+                         
                          style="width:98%;">
  
-						 <p:column headerText="Id" style="width:70px;">
+						 <p:column headerText="Id" style="width:70px;" sortBy="#{user.codigo}">
             				<h:outputText value="#{user.codigo}" />
         				 </p:column>
  
-        				 <p:column headerText="Usuario" style="width:70px;">
+        				 <p:column headerText="Usuario" style="width:70px;" sortBy="#{user.usuario}">
             				<h:outputText value="#{user.usuario}" />
         				 </p:column>
         				 
-        				 <p:column headerText="Senha" style="width:70px;">
+        				 <p:column headerText="Senha" style="width:70px;" sortBy="#{user.senha}">
             				<h:outputText value="#{user.senha}" />
             				
         				 </p:column>

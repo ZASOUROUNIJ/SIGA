@@ -15,7 +15,7 @@
  
 	<ui:define name="content">
  
-		   <p:tabView style="width:600px;height:470px;margin:auto;">
+		   <p:tabView style="width:600px;height:300px;margin:auto;">
 	 		 	<p:tab title="Cadastro de Turma">
  
 	 		 	<h:form id="form-cadastro">	 	
@@ -51,11 +51,11 @@
 	            			     required="true"
 	            			     requiredMessage="O professor é de preenchimento obrigatório"/>	    
  
-	            			
+	            		<p:spacer/>	
  
 	            		<p:commandButton value="Salvar" 
 	            				 id="commandButton-salvar"
-						 icon="ui-icon-gear"
+						 icon="ui-icon-check"
 						 actionListener="#{cadastrarTurmaController.SalvarNovaTurma}"
 						 update="panelGrid-campos-form"/>
  

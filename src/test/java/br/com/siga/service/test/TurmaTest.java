@@ -66,7 +66,7 @@ public class TurmaTest {
 			}
 		}
 		
-		@Test
+		//@Test
 		public void testBuscar() throws Exception {
 			try {
 				List<TurmaModel> turmas = dao.GetTurmas();

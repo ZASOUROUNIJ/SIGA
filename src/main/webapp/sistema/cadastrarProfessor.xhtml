@@ -15,7 +15,7 @@
  
 	<ui:define name="content">
  
-		   <p:tabView style="width:600px;height:470px;margin:auto;">
+		   <p:tabView style="width:600px;height:300px;margin:auto;">
 	 		 	<p:tab title="Cadastro de Professor">
  
 	 		 	<h:form id="form-cadastro">	 	
@@ -29,7 +29,7 @@
 	            				  required="true"
 	            				  requiredMessage="O nome é de preenchimento obrigatório"/>
  
-        				<p:outputLabel for="date" value="Data de nascimento " />
+        				<p:outputLabel for="date" value="Data de nascimento" />
        				    <p:inputMask id="date" value="#{cadastrarProfessorController.professorModel.data}" 
        				    		mask="99/99/9999"
 	            			     required="true"
@@ -59,7 +59,7 @@
  
 	            		<p:commandButton value="Salvar" 
 	            				 id="commandButton-salvar"
-						 icon="ui-icon-gear"
+						 icon="ui-icon-check"
 						 actionListener="#{cadastrarProfessorController.SalvarNovoProfessor}"
 						 update="panelGrid-campos-form"/>
  

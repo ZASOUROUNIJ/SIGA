@@ -33,32 +33,32 @@
 						 rows="15"
 						 paginator="true"
 						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="5,10,15"
+                         
                          style="width:98%;">
  
-						 <p:column headerText="Id" style="width:70px;">
+						 <p:column headerText="Id" style="width:70px;" sortBy="#{professor.codigo}">
             				<h:outputText value="#{professor.codigo}" />
         				 </p:column>
  
-        				 <p:column headerText="Nome" style="width:70px;">
+        				 <p:column headerText="Nome" style="width:70px;" sortBy="#{professor.nome}">
             				<h:outputText value="#{professor.nome}" />
         				 </p:column>
 
-        				 <p:column headerText="Data de Nascimento" style="width:100px;">
+        				 <p:column headerText="Data de Nascimento" style="width:100px;" sortBy="#{professor.data}">
             				<h:outputText value="#{professor.data}"/>            					
         				 </p:column>
         				 
-        				 <p:column headerText="Telefone" style="width:70px;">
+        				 <p:column headerText="Telefone" style="width:70px;" sortBy="#{professor.telefone}">
             				<h:outputText value="#{professor.telefone}" />
             				
         				 </p:column>
         				 
-        				 <p:column headerText="Endereço" style="width:70px;">
+        				 <p:column headerText="Endereço" style="width:70px;" sortBy="#{professor.endereco}">
             				<h:outputText value="#{professor.endereco}" />
             				
         				 </p:column>
         				 
-        				 <p:column headerText="Data de Cadastro" style="width:150px;">
+        				 <p:column headerText="Data de Cadastro" style="width:150px;" sortBy="#{professor.dataCad}">
             				<h:outputText value="#{professor.dataCad}" >
             				<format:LocalDateTimeConverter pattern = "dd/MM/yyyy HH:mm:ss" />
             				</h:outputText>

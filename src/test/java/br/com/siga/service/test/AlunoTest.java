@@ -81,7 +81,7 @@ public class AlunoTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void testBuscar() throws Exception {
 		try {
 			// Pega a lista de alunos cadastrados no banco de dados
